@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by libAntimony version v2.9.4 with libSBML version 5.15.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="__main" name="__main">
+    <listOfFunctionDefinitions>
+      <functionDefinition id="hbt">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> sigma </ci>
+            </bvar>
+            <bvar>
+              <ci> sum_omega </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <minus/>
+                      <ci> sigma </ci>
+                    </apply>
+                    <ci> sum_omega </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfCompartments>
+      <compartment sboTerm="SBO:0000410" id="default_compartment" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="C1" compartment="default_compartment" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="C2" compartment="default_compartment" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="C3" compartment="default_compartment" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="C4" compartment="default_compartment" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="E" compartment="default_compartment" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="D" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="F" compartment="default_compartment" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RPS6p" compartment="default_compartment" initialConcentration="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="gamma_C1" value="0.874959761513517" constant="true"/>
+      <parameter id="sigma_C1" value="2.57082735126616" constant="true"/>
+      <parameter id="w_C1_O" value="8.27242683323861" constant="true"/>
+      <parameter id="w_C1_C3" value="-9.90375259779034" constant="true"/>
+      <parameter id="w_C1_C4" value="-5.05055006513487" constant="true"/>
+      <parameter id="w_C1_S1" value="-1.14570096952006" constant="true"/>
+      <parameter id="DayNight" value="0" constant="false"/>
+      <parameter id="gamma_C2" value="9.78691703479351" constant="true"/>
+      <parameter id="sigma_C2" value="4.05577865924792" constant="true"/>
+      <parameter id="w_C2_O" value="7.12079382573465" constant="true"/>
+      <parameter id="w_C2_C1" value="-9.67796859751187" constant="true"/>
+      <parameter id="w_C2_C4" value="-0.732048730704723" constant="true"/>
+      <parameter id="w_C2_C2" value="-5.07786487233138" constant="true"/>
+      <parameter id="gamma_C3" value="0.217988480217863" constant="true"/>
+      <parameter id="sigma_C3" value="6.05747999972854" constant="true"/>
+      <parameter id="w_C3_O" value="1.57999636064862" constant="true"/>
+      <parameter id="w_C3_C4" value="-1.56485549862159" constant="true"/>
+      <parameter id="w_C3_C2" value="-9.87762090238621" constant="true"/>
+      <parameter id="w_C3_C1" value="4.46575403246609" constant="true"/>
+      <parameter id="w_C3_S1" value="1.5341524913998" constant="true"/>
+      <parameter id="gamma_C4" value="3.73609708805346" constant="true"/>
+      <parameter id="sigma_C4" value="9.86430722613569" constant="true"/>
+      <parameter id="w_C4_O" value="7.34584853219835" constant="true"/>
+      <parameter id="w_C4_C1" value="-10" constant="true"/>
+      <parameter id="w_C4_C4" value="-7.58976612914149" constant="true"/>
+      <parameter id="avg" value="-1" constant="false"/>
+      <parameter id="t_shift" value="0" constant="false"/>
+      <parameter id="period" value="9.5" constant="true"/>
+      <parameter id="day" value="1" constant="false"/>
+      <parameter id="night" value="0" constant="false"/>
+      <parameter id="norm_avg" value="0" constant="true"/>
+      <parameter id="gamma_E" value="3.558277395" constant="true"/>
+      <parameter id="sigma_E" value="4.076017838" constant="true"/>
+      <parameter id="w_E_O" value="-0.699951505" constant="true"/>
+      <parameter id="w_E_S1" value="9.976409177" constant="true"/>
+      <parameter id="gamma_F" value="3.318618295" constant="true"/>
+      <parameter id="sigma_F" value="8.349043773" constant="true"/>
+      <parameter id="w_F_O" value="-0.838603397" constant="true"/>
+      <parameter id="w_F_E" value="5.721142043" constant="true"/>
+      <parameter id="gamma_RPS6" value="1.723064662" constant="true"/>
+      <parameter id="sig_phos" value="1.270006082" constant="true"/>
+      <parameter id="w_phos" value="-2.156172628" constant="true"/>
+      <parameter id="w_RPS6_F" value="1.562415918" constant="true"/>
+      <parameter id="sig_dephos" value="1.194229243" constant="true"/>
+      <parameter id="w_dephos" value="6.432216089" constant="true"/>
+      <parameter id="w_RPS6_C1" value="-9.35" constant="true"/>
+      <parameter id="w_RPS6_C2" value="9.767340212" constant="true"/>
+      <parameter id="w_RPS6_C3" value="4.612489219" constant="true"/>
+      <parameter id="w_RPS6_C4" value="9.267898206" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="Clock_J00" reversible="true" fast="false">
+        <listOfProducts>
+          <speciesReference species="C1" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C3"/>
+          <modifierSpeciesReference species="C4"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_C1 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <ci> hbt </ci>
+                  <ci> sigma_C1 </ci>
+                  <apply>
+                    <plus/>
+                    <ci> w_C1_O </ci>
+                    <apply>
+                      <times/>
+                      <ci> w_C1_C3 </ci>
+                      <ci> C3 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> w_C1_C4 </ci>
+                      <ci> C4 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> w_C1_S1 </ci>
+                      <ci> DayNight </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> C1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Clock_J01" reversible="true" fast="false">
+        <listOfProducts>
+          <speciesReference species="C2" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C1"/>
+          <modifierSpeciesReference species="C4"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_C2 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <ci> hbt </ci>
+                  <ci> sigma_C2 </ci>
+                  <apply>
+                    <plus/>
+                    <ci> w_C2_O </ci>
+                    <apply>
+                      <times/>
+                      <ci> w_C2_C1 </ci>
+                      <ci> C1 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> w_C2_C4 </ci>
+                      <ci> C4 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> w_C2_C2 </ci>
+                      <ci> C2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> C2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Clock_J02" reversible="true" fast="false">
+        <listOfProducts>
+          <speciesReference species="C3" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C1"/>
+          <modifierSpeciesReference species="C2"/>
+          <modifierSpeciesReference species="C4"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_C3 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <ci> hbt </ci>
+                  <ci> sigma_C3 </ci>
+                  <apply>
+                    <plus/>
+                    <ci> w_C3_O </ci>
+                    <apply>
+                      <times/>
+                      <ci> w_C3_C4 </ci>
+                      <ci> C4 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> w_C3_C2 </ci>
+                      <ci> C2 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> w_C3_C1 </ci>
+                      <ci> C1 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> w_C3_S1 </ci>
+                      <ci> DayNight </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> C3 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Clock_J03" reversible="true" fast="false">
+        <listOfProducts>
+          <speciesReference species="C4" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_C4 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <ci> hbt </ci>
+                  <ci> sigma_C4 </ci>
+                  <apply>
+                    <plus/>
+                    <ci> w_C4_O </ci>
+                    <apply>
+                      <times/>
+                      <ci> w_C4_C1 </ci>
+                      <ci> C1 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> w_C4_C4 </ci>
+                      <ci> C4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> C4 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="J01" reversible="true" fast="false">
+        <listOfProducts>
+          <speciesReference species="E" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_E </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <ci> hbt </ci>
+                  <ci> sigma_E </ci>
+                  <apply>
+                    <plus/>
+                    <ci> w_E_O </ci>
+                    <apply>
+                      <times/>
+                      <ci> w_E_S1 </ci>
+                      <ci> DayNight </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> E </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="J02" reversible="true" fast="false">
+        <listOfProducts>
+          <speciesReference species="F" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="E"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_F </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <ci> hbt </ci>
+                  <ci> sigma_F </ci>
+                  <apply>
+                    <plus/>
+                    <ci> w_F_O </ci>
+                    <apply>
+                      <times/>
+                      <ci> w_F_E </ci>
+                      <ci> E </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> F </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="J03" reversible="true" fast="false">
+        <listOfProducts>
+          <speciesReference species="RPS6p" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C1"/>
+          <modifierSpeciesReference species="C2"/>
+          <modifierSpeciesReference species="C3"/>
+          <modifierSpeciesReference species="C4"/>
+          <modifierSpeciesReference species="F"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_RPS6 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <ci> hbt </ci>
+                    <ci> sig_phos </ci>
+                    <apply>
+                      <plus/>
+                      <ci> w_phos </ci>
+                      <apply>
+                        <times/>
+                        <ci> w_RPS6_F </ci>
+                        <ci> F </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> RPS6p </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <ci> hbt </ci>
+                    <ci> sig_dephos </ci>
+                    <apply>
+                      <plus/>
+                      <ci> w_dephos </ci>
+                      <apply>
+                        <times/>
+                        <ci> w_RPS6_C1 </ci>
+                        <ci> C1 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> w_RPS6_C2 </ci>
+                        <ci> C2 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> w_RPS6_C3 </ci>
+                        <ci> C3 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> w_RPS6_C4 </ci>
+                        <ci> C4 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> RPS6p </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+    <listOfEvents>
+      <event id="DayNight_16_8__E0" useValuesFromTriggerTime="true">
+        <trigger initialValue="false" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <gt/>
+              <apply>
+                <plus/>
+                <ci> avg </ci>
+                <apply>
+                  <sin/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <pi/>
+                      <apply>
+                        <plus/>
+                        <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                        <ci> t_shift </ci>
+                      </apply>
+                    </apply>
+                    <ci> period </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <cn type="integer"> 0 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="DayNight">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> day </ci>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="DayNight_16_8__E1" useValuesFromTriggerTime="true">
+        <trigger initialValue="false" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <leq/>
+              <apply>
+                <plus/>
+                <ci> avg </ci>
+                <apply>
+                  <sin/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 2 </cn>
+                      <pi/>
+                      <apply>
+                        <plus/>
+                        <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                        <ci> t_shift </ci>
+                      </apply>
+                    </apply>
+                    <ci> period </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <cn type="integer"> 0 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="DayNight">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> night </ci>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="_E0" useValuesFromTriggerTime="true">
+        <trigger initialValue="true" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <gt/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn> 9.5 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="DayNight">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 1 </cn>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="_E1" useValuesFromTriggerTime="true">
+        <trigger initialValue="true" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <gt/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn> 14.25 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="DayNight">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 0 </cn>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="_E2" useValuesFromTriggerTime="true">
+        <trigger initialValue="true" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <gt/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn type="integer"> 19 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="avg">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn> 0.505 </cn>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="_E3" useValuesFromTriggerTime="true">
+        <trigger initialValue="true" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <gt/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <cn> 104.5 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="avg">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 1 </cn>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+    </listOfEvents>
+  </model>
+</sbml>
