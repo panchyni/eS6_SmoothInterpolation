@@ -864,8 +864,8 @@ def PlotBinnedPeakMetric(model,base_model,parameter_dict,time_start=0,time_stop=
         bin_stop = daylength_dict_HF[bin]['stop']
         bin_days = daylength_dict_HF[bin]['days']
         
-        print(bin_start)
-        print(len(bin_days))
+        #print(bin_start)
+        #print(len(bin_days))
         
         SteadyState_list = [HF_daily_stats_V2["SteadyStateRPS6p"][d] for d in bin_days]
         EarlyMax_list = [HF_daily_stats_V2["MaxRPS6pEarly"][d] for d in bin_days]
@@ -890,7 +890,7 @@ def PlotBinnedPeakMetric(model,base_model,parameter_dict,time_start=0,time_stop=
             EarlyMax_list = [model_daily_stats_V2["MaxRPS6pEarly"][d] for d in bin_days]
             peak_metric = [EarlyMax_list[i]/SteadyState_list[i] for i in range(len(SteadyState_list))]
             
-            print(len(bin_days))
+            #print(len(bin_days))
     
             if len(peak_metric) > 0:
                 peak_metric_avg = np.mean(peak_metric)
